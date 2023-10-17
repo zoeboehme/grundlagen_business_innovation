@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 /**
- * Write a description of class Fabrik here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Alle anderen Klassen sind mit der Klasse Fabrik verbunden und somit ist diese die Hauptklasse. Auch wird durch die
+ * Klasse Fabrik der Einstieg ins Programm ermöglicht.
+ * @author (Gruppe 1)
+ * @version (Version final)
  */
 public class Fabrik
 {
@@ -27,23 +27,26 @@ public class Fabrik
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Mit Hilfe dieser Methode können Bestellungen aufgegeben werden.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param     stuehle und sofas
      */
     public void bestellungAufgeben(int stuehle, int sofas)
     {
-        // Methode mit der eine neue Bestellung aufgegeben werden kann
         bestellungen.add(new Bestellung(bestellungsNr, stuehle, sofas));
         bestellungsNr++;
     }
     
-    
+    /** 
+    *          Methode die auf Basis einer Bestellnummer alle Bestellungen
+    *          durchlaufen kann und die richtigen Bestelldetails zurückgibt
+    *
+    *@param    bestellnummer
+    */
+    // Frage: bestellungsdetails wird das genau so in der Klasse Bestellungen definiert?
+    // ansonsten müssen wir hier die Variabel noch ändern
     public void bestellungAusgeben(int bestellnummer) {
         boolean gefunden = false;
-        // Methode die auf Basis einer Bestellnummer alle Bestellungen
-        // durchlaufen kann und die richtigen Bestelldetails zurückgibt
         for(Bestellung bestellungsdetails : bestellungen) {
             if (bestellungsdetails.getBestellungsNr() == bestellnummer) {
                 System.out.println("Bestellnummer: " + bestellungsdetails.gibBestellungsNr());
@@ -61,6 +64,7 @@ public class Fabrik
     }
     
     public static void main(String[] args) {
+        System.out.println("Das Produktionsmanagementsystem wird gestartet");
         Fabrik fabrik = new Fabrik();
         // Beispielbestellung 1
         fabrik.bestellungAufgeben(5, 3); 
