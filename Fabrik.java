@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
 /**
- * Write a description of class Fabrik here.
+ * Die Klasse Fabrik verwaltet Bestellungen. Sie kann Bestellungen
+ * aufnehmen und Informationen zu Bestellungen ausgeben. 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Gruppe 1
+ * @version 1.2
  */
 public class Fabrik
 {
@@ -15,7 +16,8 @@ public class Fabrik
 
 
     /**
-     * Constructor for objects of class Fabrik
+     * Konstruktor für die Fabrik Klasse. 
+     * Initialisiert die Liste mit Bestellungen und die Bestellnummer.
      */
     public Fabrik()
     {
@@ -26,20 +28,28 @@ public class Fabrik
         bestellungsNr = 0;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+      /**
+     * Methode mit der eine neue Bestellung aufgegeben werden kann.
+     * Die Bestellnummer wird mit jeder neuen Bestellung erhöht,
+     * sodass keine Bestellung die gleiche Nummer hat
+     * @param stuehle Anzahl der bestellten Stühle.
+     * @param sofas Anzahl der bestellten Sofas
      */
+    
     public void bestellungAufgeben(int stuehle, int sofas)
     {
-        // Methode mit der eine neue Bestellung aufgegeben werden kann
+    
         bestellungen.add(new Bestellung(bestellungsNr, stuehle, sofas));
+        // Wert der Bestellnummer wird erhöht
         bestellungsNr++;
     }
     
-    
+    /**
+     * Bestellungen können auf Basis der Bestellnummer gesucht werden
+     * und die Methode gibt dann Informationen dazu aus.
+     *
+     * @param bestellnummer Bestellnummer der gesuchten Bestellung
+     */
     public void bestellungAusgeben(int bestellnummer) {
         boolean gefunden = false;
         // Methode die auf Basis einer Bestellnummer alle Bestellungen
@@ -50,24 +60,22 @@ public class Fabrik
                 System.out.println("Anzahl Stühle: " + bestellungsdetails.gibAnzahlStuehle());
                 System.out.println("Anzahl Sofas: " + bestellungsdetails.gibAnzahlSofas());
                 System.out.println("Beschaffungszeit: " + bestellungsdetails.gibBeschaffungsZeit());
+                System.out.println("Bestellbestätigung: " + bestellungsdetails.gibBestellBestaetigung());
                 gefunden = true;
-                break; // Wir haben die Bestellung gefunden, daher beenden wir die Schleife.
-            }}
-        
-        
+                break; // Wir haben die Bestellung gefunden, daher beenden wir den Loop
+            }
+        }
+        // Falls wir am Ende des Loops keine entsprechende Bestellung gefunden haben informieren wir den User darüber
         if (!gefunden) {
             System.out.println("Keine passende Bestellung gefunden");
-        }}
+        }
     }
     
+    /** Main Methode ermöglicht den Einstieg in das Programm und somit
+    * die Interaktion mit dem User. 
+    */
     public static void main(String[] args) {
-        Fabrik fabrik = new Fabrik();
-        // Beispielbestellung 1
-        fabrik.bestellungAufgeben(5, 3); 
-        // Beispielbestellung 2
-        fabrik.bestellungAufgeben(2, 4); 
-        int bestellnummer = 0; // Ändere die Bestellnummer entsprechend
-        fabrik.bestellungAusgeben(bestellnummer);
+          
     }
     
  
