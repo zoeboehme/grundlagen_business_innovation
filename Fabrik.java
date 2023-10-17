@@ -1,11 +1,18 @@
 import java.util.ArrayList;
 
 /**
+<<<<<<< HEAD
  * Die Klasse Fabrik verwaltet Bestellungen. Sie kann Bestellungen
  * aufnehmen und Informationen zu Bestellungen ausgeben. 
  *
  * @author Gruppe 1
  * @version 1.3
+=======
+ * Alle anderen Klassen sind mit der Klasse Fabrik verbunden und somit ist diese die Hauptklasse. Auch wird durch die
+ * Klasse Fabrik der Einstieg ins Programm ermöglicht.
+ * @author (Gruppe 1)
+ * @version (Version final)
+>>>>>>> 571b6a4675f33c8637d66f6cee18b7e5ca0b1884
  */
 public class Fabrik
 {
@@ -29,6 +36,7 @@ public class Fabrik
     }
     
     /**
+<<<<<<< HEAD
      * Methode mit der eine neue Bestellung aufgegeben werden kann.
      * Falls die Bestellung zulässig ist, wird sie aufgenommen und User 
      * werden dementsprechend informiert.
@@ -63,10 +71,28 @@ public class Fabrik
      *
      * @param bestellnummer Bestellnummer der gesuchten Bestellung
      */
+=======
+     * Mit Hilfe dieser Methode können Bestellungen aufgegeben werden.
+     *
+     * @param     stuehle und sofas
+     */
+    public void bestellungAufgeben(int stuehle, int sofas)
+    {
+        bestellungen.add(new Bestellung(bestellungsNr, stuehle, sofas));
+        bestellungsNr++;
+    }
+    
+    /** 
+    *          Methode die auf Basis einer Bestellnummer alle Bestellungen
+    *          durchlaufen kann und die richtigen Bestelldetails zurückgibt
+    *
+    *@param    bestellnummer
+    */
+    // Frage: bestellungsdetails wird das genau so in der Klasse Bestellungen definiert?
+    // ansonsten müssen wir hier die Variabel noch ändern
+>>>>>>> 571b6a4675f33c8637d66f6cee18b7e5ca0b1884
     public void bestellungAusgeben(int bestellnummer) {
         boolean gefunden = false;
-        // Methode die auf Basis einer Bestellnummer alle Bestellungen
-        // durchlaufen kann und die richtigen Bestelldetails zurückgibt
         for(Bestellung bestellungsdetails : bestellungen) {
             if (bestellungsdetails.getBestellungsNr() == bestellnummer) {
                 System.out.println("Bestellnummer: " + bestellungsdetails.gibBestellungsNr());
@@ -88,7 +114,18 @@ public class Fabrik
     * die Interaktion mit dem User. 
     */
     public static void main(String[] args) {
+<<<<<<< HEAD
           
+=======
+        System.out.println("Das Produktionsmanagementsystem wird gestartet");
+        Fabrik fabrik = new Fabrik();
+        // Beispielbestellung 1
+        fabrik.bestellungAufgeben(5, 3); 
+        // Beispielbestellung 2
+        fabrik.bestellungAufgeben(2, 4); 
+        int bestellnummer = 0; // Ändere die Bestellnummer entsprechend
+        fabrik.bestellungAusgeben(bestellnummer);
+>>>>>>> 571b6a4675f33c8637d66f6cee18b7e5ca0b1884
     }
     
  
