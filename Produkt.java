@@ -1,5 +1,36 @@
 
 /**
+<<<<<<< HEAD
+ * Write a description of class Produkt here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class Produkt
+{
+    // instance variables - replace the example below with your own
+    private int x;
+
+    /**
+     * Constructor for objects of class Produkt
+     */
+    public Produkt()
+    {
+        // initialise instance variables
+        x = 0;
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int sampleMethod(int y)
+    {
+        // put your code here
+        return x + y;
+=======
  * Beschreiben Sie hier die Klasse Produkt.
  * 
  * @author (Stefanie Rehm) 
@@ -55,5 +86,6 @@ public class Produkt
     public int aktuellerZustand ()
     {
         return zustand;
+>>>>>>> 571b6a4675f33c8637d66f6cee18b7e5ca0b1884
     }
 }
