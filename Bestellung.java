@@ -1,32 +1,36 @@
 
 /**
- * Beschreiben Sie hier die Klasse Bestellung:
+ * Die Klasse Bestellung beinhaltet alle getätigten Bestellungen
  * 
  * 
- * @Linda Fuchs 
- * @11.10.23
+ * @author Gruppe 1
+ * @Version 29.10.23
  */
+ //Die Klasse Bestellung wird erstellt
 public class Bestellung
 {
-
-    /**
-     * Konstruktor für Objekte der Klasse Bestellung
-     */
-    public class Bestellung(
     {
-        private boolean bestellbestaetigung;
-        private int beschaffungszeit;
-        private int bestellnummer;
-        private int anzahlStuehle;
-        private int anzahlSofas;
-        private ArrayList<Produkt> bestellteProdukte;
-        
+    //Die privaten Attribute werden definiert
+    //für die bestellbestätigung wit ein boolean Attribut erstellt, welches überprüft, ob eine Bestellung gemacht wurde
+    private boolean bestellbestaetigung;
+    //für die beschaffungszeit wird ein Integer erstellt, welcher die Lieferdauer misst
+    private int beschaffungszeit;
+    //für die bestellnummer wird ein Integer erstellt, welcher einer getätigten Bestellung eine Nummer zuweist
+    private int bestellnummer;
+    //der Integer anzahlStuehle misst, wie viele Stühle bestellt wurden
+    private int anzahlStuehle;
+    //der Integer anzahlSofas misst, wie viele Sofas bestellt wurden
+    private int anzahlSofas;
+    // Die ArrayList<Produkt> beinhaltet alle Produkte, die bestellt wurden
+    private ArrayList<Produkt> bestellteProdukte;
     }
 
     /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
+     *Der Konstruktor wird erstellt und die Variablen initialisiert.
      * 
-     * @param  y    ein Beispielparameter für eine Methode
+     * @param bestellnummer für die Nummer, welcher einer Bestellung zugewiesen wird
+     * @param anzahlStuehle für die Bestellte Anzahl von Stühlen
+     * @param anzahlSofas für die Bestellte Anzahl von Sofas
      * @return        die Summe aus x und y
      */
     public int Bestellung(int bestellnummer, int anzahlStuehle, int anzahlSofas)
@@ -47,11 +51,9 @@ public class Bestellung
         for(i=0;i<=anzahlSofas;i++)
         {
             sofaHinzufuegen();
-        }
-        
-
+        }   
     }
-    
+
     private void stuhlHinzufuegen()
     {
          Stuhl stuhl = new Stuhl();
@@ -97,8 +99,6 @@ public class Bestellung
     public int gibAnzahlSofas()
     {
         return anzahlSofas;
-    }  
-    
-    
+    }   
 
 }
